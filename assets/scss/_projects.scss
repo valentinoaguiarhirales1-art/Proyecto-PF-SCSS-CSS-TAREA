@@ -1,0 +1,148 @@
+// ==========================================
+// Sección de Proyectos (Projects)
+// ==========================================
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.projects {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 80px;
+
+  @include tablet {
+    padding-top: 60px;
+    padding-bottom: 100px;
+  }
+
+  @include desktop {
+    padding-top: 80px;
+    padding-bottom: 140px;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    @include tablet {
+      margin-bottom: 60px;
+    }
+
+    @include desktop {
+      margin-bottom: 80px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 60px 24px;
+    }
+
+    @include desktop {
+      gap: 69px 30px;
+    }
+  }
+}
+
+// Tarjeta individual de proyecto
+.project-card {
+  display: flex;
+  flex-direction: column;
+
+  &__image-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #242424;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      transition: transform $transition-normal;
+    }
+
+    &:hover img {
+      @include desktop {
+        transform: scale(1.03);
+      }
+    }
+  }
+
+  // Overlay interactivo que aparece en Desktop al pasar el cursor
+  &__overlay {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      position: absolute;
+      inset: 0;
+      background-color: $color-overlay;
+      opacity: 0;
+      transition: opacity $transition-fast;
+      z-index: 2;
+
+      .btn-link {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__image-container:hover &__overlay,
+  &__image-container:focus-within &__overlay {
+    @include desktop {
+      opacity: 1;
+    }
+  }
+
+  &__title {
+    margin-bottom: 7px;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  &__tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 20px;
+
+    @include desktop {
+      margin-bottom: 0;
+    }
+
+    li {
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: $font-weight-medium;
+      color: $color-text-muted;
+      text-transform: uppercase;
+    }
+  }
+
+  // Acciones visibles en móvil y tablet
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    @include desktop {
+      display: none; // En escritorio se muestran en el overlay sobre la imagen
+    }
+  }
+}

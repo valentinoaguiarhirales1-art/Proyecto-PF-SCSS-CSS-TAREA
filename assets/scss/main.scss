@@ -1,0 +1,23 @@
+// ==========================================
+// Hoja de Estilos Principal (main.scss)
+// Proyecto: Mini Portafolio de Desarrollador
+// ==========================================
+
+// 1. Configuraciones y Utilidades
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// 2. Base y Tipografía
+@use 'reset';
+@use 'typography';
+
+// 3. Componentes Globales
+@use 'components';
+
+// 4. Secciones (Mobile First)
+@use 'header';
+@use 'hero';
+@use 'skills';
+@use 'projects';
+@use 'contact';
+@use 'footer';

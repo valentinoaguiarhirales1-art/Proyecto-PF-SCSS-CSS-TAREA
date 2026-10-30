@@ -1,0 +1,53 @@
+// ==========================================
+// Encabezado (Header / Nav)
+// ==========================================
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.header {
+  position: relative;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  @include tablet {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  @include desktop {
+    padding-top: 40px;
+  }
+
+  &__container {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__logo {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: $font-weight-bold;
+    letter-spacing: -0.33px;
+    color: $color-text-main;
+    text-decoration: none;
+
+    @include tablet {
+      font-size: 32px;
+      letter-spacing: -0.44px;
+    }
+
+    &:hover {
+      color: $color-accent;
+      transition: color $transition-fast;
+    }
+  }
+}

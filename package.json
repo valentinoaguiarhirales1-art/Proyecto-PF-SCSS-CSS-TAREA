@@ -1,0 +1,24 @@
+{
+  "name": "proyecto-pf-scss-css-tarea",
+  "version": "1.0.0",
+  "description": "Portafolio responsive desarrollado con HTML5 semántico, SASS (SCSS) y CSS para Conquer Blocks",
+  "main": "assets/js/main.js",
+  "scripts": {
+    "build:sass": "sass assets/scss/main.scss assets/css/style.css --style=expanded --source-map",
+    "watch:sass": "sass --watch assets/scss/main.scss assets/css/style.css --style=expanded --source-map"
+  },
+  "keywords": [
+    "portfolio",
+    "scss",
+    "sass",
+    "css",
+    "html5",
+    "mobile-first",
+    "responsive"
+  ],
+  "author": "Valentino Aguiar Hirales",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.77.0"
+  }
+}

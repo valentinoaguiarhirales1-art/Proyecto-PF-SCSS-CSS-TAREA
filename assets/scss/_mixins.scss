@@ -1,0 +1,69 @@
+// ==========================================
+// Mixins y Utilidades Responsive (Mobile First)
+// ==========================================
+@use 'variables' as *;
+
+// Mixin para tablet (min-width: 768px)
+@mixin tablet {
+  @media screen and (min-width: #{$bp-tablet}) {
+    @content;
+  }
+}
+
+// Mixin para desktop (min-width: 1110px)
+@mixin desktop {
+  @media screen and (min-width: #{$bp-desktop}) {
+    @content;
+  }
+}
+
+// Mixin para pantallas grandes (min-width: 1200px)
+@mixin wide {
+  @media screen and (min-width: #{$bp-wide}) {
+    @content;
+  }
+}
+
+// Mixin de contenedor con ancho máximo y padding responsivo
+@mixin container {
+  width: 100%;
+  max-width: 1110px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @include tablet {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @include desktop {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+// Enlace subrayado interactivo con acento verde
+@mixin interactive-link {
+  display: inline-block;
+  font-family: $font-family-main;
+  font-size: 16px;
+  font-weight: $font-weight-bold;
+  line-height: 26px;
+  letter-spacing: 2.29px;
+  text-transform: uppercase;
+  color: $color-text-main;
+  text-decoration: none;
+  padding-bottom: 10px;
+  border-bottom: 2px solid $color-accent;
+  background: transparent;
+  cursor: pointer;
+  transition: color $transition-fast, border-color $transition-fast;
+
+  &:hover,
+  &:focus-visible {
+    color: $color-accent;
+    outline: none;
+  }
+}

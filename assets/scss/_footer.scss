@@ -1,0 +1,51 @@
+// ==========================================
+// Pie de página (Footer)
+// ==========================================
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.footer {
+  position: relative;
+  z-index: 2;
+
+  &__container {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-top: 40px;
+    padding-bottom: 60px;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+      padding-top: 30px;
+      padding-bottom: 40px;
+    }
+
+    @include desktop {
+      padding-top: 47px;
+      padding-bottom: 92px;
+    }
+  }
+
+  &__logo {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: $font-weight-bold;
+    letter-spacing: -0.33px;
+    color: $color-text-main;
+    text-decoration: none;
+
+    @include tablet {
+      font-size: 32px;
+      letter-spacing: -0.44px;
+    }
+
+    &:hover {
+      color: $color-accent;
+      transition: color $transition-fast;
+    }
+  }
+}

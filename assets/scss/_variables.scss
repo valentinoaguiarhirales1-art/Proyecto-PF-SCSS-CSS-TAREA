@@ -1,0 +1,28 @@
+// ==========================================
+// Variables del Sistema de Diseño (Design System)
+// ==========================================
+
+// Colores principales
+$color-bg-dark: #151515;       // Fondo principal
+$color-bg-contact: #242424;    // Fondo sección Contacto y Footer
+$color-accent: #4EE1A0;        // Verde acento / interactivo
+$color-text-main: #FFFFFF;     // Blanco para títulos y elementos destacados
+$color-text-muted: #D9D9D9;    // Gris claro para texto de lectura y detalles
+$color-error: #FF6F5B;         // Rojo error para formularios
+$color-border: #444444;        // Líneas divisoras y bordes sutiles
+$color-overlay: rgba(0, 0, 0, 0.75); // Overlay hover en proyectos
+
+// Tipografía
+$font-family-main: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// Breakpoints para diseño responsive (Mobile First)
+$bp-mobile: 375px;
+$bp-tablet: 768px;
+$bp-desktop: 1110px;
+$bp-wide: 1200px;
+
+// Transiciones estándar
+$transition-fast: 0.25s ease-in-out;
+$transition-normal: 0.35s ease-in-out;

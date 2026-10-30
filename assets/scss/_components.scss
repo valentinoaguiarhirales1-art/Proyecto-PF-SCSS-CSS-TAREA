@@ -1,0 +1,92 @@
+// ==========================================
+// Componentes y Elementos Reutilizables
+// ==========================================
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.btn-link {
+  @include interactive-link;
+}
+
+.container-divider {
+  @include container;
+}
+
+// Separador horizontal
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: none;
+  margin: 0;
+}
+
+// Enlaces de redes sociales con hover de SVG a color de acento
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+
+  @include tablet {
+    gap: 32px;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform $transition-fast;
+
+    svg {
+      width: 20px;
+      height: 20px;
+
+      @include tablet {
+        width: 24px;
+        height: 24px;
+      }
+
+      path {
+        fill: $color-text-main;
+        transition: fill $transition-fast;
+      }
+    }
+
+    &:hover,
+    &:focus-visible {
+      transform: translateY(-2px);
+      outline: none;
+
+      svg,
+      svg path {
+        fill: $color-accent !important;
+      }
+    }
+  }
+}
+
+// Elementos decorativos abstractos (SVG)
+.pattern-rings {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.pattern-circle {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1;
+}
+
+// Accesibilidad: ocultar visualmente pero mantener para lectores de pantalla
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
